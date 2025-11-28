@@ -544,7 +544,7 @@ FontWeight="SemiBold" Foreground="Blue"/>
                         </TabItem>
 
 
-                 <!--        <TabItem Header="  🌐   Сетевые подключения (Netstat)">
+                 <TabItem Header="  🌐   Сетевые подключения (Netstat)">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -578,13 +578,13 @@ FontWeight="SemiBold" Foreground="Blue"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Grid>
-                        </TabItem>  -->
+                        </TabItem>  
 
                     </TabControl>
                 </Grid>
             </TabItem>
             <!-- Вкладка 6: Автозагрузка -->
-        <!--   <TabItem Header="Автозагрузка и Фон">
+            <TabItem Header="Автозагрузка и Фон">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -617,10 +617,10 @@ ScrollViewer.VerticalScrollBarVisibility="Auto">
                         </DataGrid>
                     </GroupBox>
                 </Grid>
-            </TabItem>-->
+            </TabItem>
             <!-- Вкладка 7: Безопасность -->
             <TabItem Header="Безопасность" Height="32" VerticalAlignment="Top">
-                <Grid>
+                <Grid Height="639">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -765,7 +765,7 @@ ScrollViewer.VerticalScrollBarVisibility="Auto">
 Margin="10" VerticalAlignment="Center" FontWeight="SemiBold" Foreground="Blue"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Grid.Row="2" Header="🔍 Результаты проверок безопасности" Margin="10,5,10,5">
+                    <GroupBox Grid.Row="2" Header="🔍 Результаты проверок безопасности" Margin="10,5,10,77" Grid.RowSpan="2">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -818,12 +818,12 @@ Margin="10" VerticalAlignment="Center" FontWeight="SemiBold" Foreground="Blue"/>
                         </Grid>
                     </GroupBox>
 
-                    <GroupBox Grid.Row="3" Header=" 🚨  Обнаруженные угрозы и уязвимости" Margin="10,5,10,5">
+                    <GroupBox Grid.Row="3" Header=" 🚨  Обнаруженные угрозы и уязвимости" Margin="10,61,10,5" Grid.RowSpan="2">
                         <DataGrid ItemsSource="{Binding SecurityScanResult.Threats}"
 AutoGenerateColumns="False"
 IsReadOnly="True"
 ScrollViewer.VerticalScrollBarVisibility="Auto"
-VirtualizingPanel.IsVirtualizing="True">
+VirtualizingPanel.IsVirtualizing="True" Height="174">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Угроза" Binding="{Binding Name}" Width="2*"/>
                                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="1*"/>
@@ -858,39 +858,6 @@ VirtualizingPanel.IsVirtualizing="True">
                                 <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="3*"/>
                                 <DataGridTextColumn Header="Расположение" Binding="{Binding FilePath}" Width="2*"/>
                                 <DataGridTextColumn Header="Рекомендация" Binding="{Binding Recommendation}" Width="2*"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </GroupBox>
-
-                    <GroupBox Grid.Row="4" Header=" 📰  Журнал событий безопасности (Windows)" Margin="10,5,10,10">
-                        <DataGrid ItemsSource="{Binding SecurityEvents}"
-AutoGenerateColumns="False"
-IsReadOnly="True"
-ScrollViewer.VerticalScrollBarVisibility="Auto"
-VirtualizingPanel.IsVirtualizing="True">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Время" Binding="{Binding TimeGenerated, StringFormat='dd.MM.yy HH:mm'}" Width="1.5*"/>
-                                <DataGridTextColumn Header="Событие" Binding="{Binding EventType}" Width="2*"/>
-                                <DataGridTextColumn Header="Источник" Binding="{Binding Source}" Width="2*"/>
-                                <DataGridTextColumn Header="Важность" Binding="{Binding Severity}" Width="1*">
-                                    <DataGridTextColumn.ElementStyle>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="FontWeight" Value="Bold"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Severity}" Value="Высокая">
-                                                    <Setter Property="Foreground" Value="Red"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding Severity}" Value="Средняя">
-                                                    <Setter Property="Foreground" Value="Orange"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding Severity}" Value="Информация">
-                                                    <Setter Property="Foreground" Value="Blue"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </DataGridTextColumn.ElementStyle>
-                                </DataGridTextColumn>
-                                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="5*"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
