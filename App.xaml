@@ -1,0 +1,16 @@
+﻿<Application x:Class="SecurityShield.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:SecurityShield.Converters"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <converters:BytesToGBConverter x:Key="BytesToGBConverter"/>
+        <converters:SeverityToColorConverter x:Key="SeverityToColorConverter"/>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        <converters:BoolToTextConverter x:Key="BoolToTextConverter"/>
+        <converters:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter"/>
+        <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
+        <converters:ContainsStringVisibilityConverter x:Key="ContainsStringVisibilityConverter"/>
+    </Application.Resources>
+</Application>
